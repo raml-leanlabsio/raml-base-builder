@@ -1,14 +1,13 @@
-FROM gliderlabs/alpine:3.1
+FROM alpine:3.1
 
-MAINTAINER V
+MAINTAINER V <v.tyubek@gmail.com>
 
-ENV INPUT api.raml
-ENV OUTPUT doc.html
-
-RUN apk-install php php-json php-phar php-ctype
+RUN apk add --update php php-json php-phar php-ctype
 
 COPY raml2html.phar /
 
-ENTRYPOINT ["/bin/sh", "-c"]
+WORKDIR /data
+VOLUME ["/data"]
 
-CMD ["/raml2html.phar generate --input=$INPUT --output=$OUTPUT"]
+ENTRYPOINT ["/raml2html.phar"]
+
