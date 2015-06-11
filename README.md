@@ -1,6 +1,6 @@
 ### RAML to HTML converter
 
-Part of Blacksmith CI server.
+[![](https://badge.imagelayers.io/leanlabs/raml-doc-builder:latest.svg)](https://imagelayers.io/?images=leanlabs/raml-doc-builder:latest 'Get your own badge on imagelayers.io')
 
 #### Usage
 
