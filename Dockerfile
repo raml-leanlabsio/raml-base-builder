@@ -1,13 +1,14 @@
-FROM alpine:3.1
+FROM leanlabs/base-builder
 
 MAINTAINER V <v.tyubek@gmail.com>
 
-RUN apk add --update php php-json php-phar php-ctype
-
-COPY raml2html.phar /
-
-WORKDIR /data
-VOLUME ["/data"]
+RUN apk add --update \
+        php \
+        php-json \
+        php-phar \
+        php-ctype && \
+    wget http://raml2html.leanlabs.io/raml2html.phar -O /raml2html.phar && \
+    chmod +x /raml2html.phar
 
 ENTRYPOINT ["/raml2html.phar"]
 
