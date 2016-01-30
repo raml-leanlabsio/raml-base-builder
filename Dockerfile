@@ -7,3 +7,4 @@ RUN apk add --update \
         php-phar \
         php-ctype
 
+RUN sed -i 's/;phar\.readonly = On/phar\.readonly = Off/g' /etc/php/php.ini
